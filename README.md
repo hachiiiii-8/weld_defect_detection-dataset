@@ -54,7 +54,7 @@ The zero-shot metric evaluates defect-region localization across different categ
 - [Training and evaluation protocols](protocols/README.md)
 - [Main and external evaluation results](results/README.md)
 
-Evaluation scripts and trained WeldCDFNet model weights are available from the corresponding authors upon reasonable request.
+For access to the paper's implementation code, evaluation scripts, and trained model weights, please contact the corresponding authors.
 
 ## Paper
 
