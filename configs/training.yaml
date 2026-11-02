@@ -1,0 +1,22 @@
+# WeldCDFNet main-benchmark training settings reported in the manuscript.
+dataset:
+  classes: 9
+  image_size: 640
+  resizing: letterbox
+training:
+  epochs: 200
+  batch_size: 16
+  optimizer: SGD
+  initial_learning_rate: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+  seeds: [40, 41, 42, 43, 44]
+augmentation:
+  horizontal_flip_probability: 0.5
+  scale_range: [0.8, 1.2]
+  translation_fraction: 0.10
+  rotation_degrees: [-5, 5]
+  brightness_contrast_range: [0.8, 1.2]
+checkpoint_selection:
+  metric: validation_mAP50_95
+  rule: highest_per_run
