@@ -14,19 +14,18 @@ WeldCDFNet is a lightweight weld defect detector built on YOLOv13n. It combines 
 
 ## Dataset
 
-The weld defect benchmark includes **6,190 images**, **28,921 annotated instances**, and **nine defect categories** from four sources.
+The weld defect benchmark includes **6,190 images**, **28,921 annotated instances**, and **nine defect categories** from two source collections.
 
 | Source | Images |
 | --- | ---: |
 | Steel | 3,168 |
-| Weld-Low | 2,000 |
-| Weld-High | 736 |
-| Robot platform | 286 |
+| LoHi-WELD (low-resolution) | 2,000 |
+| LoHi-WELD (high-resolution) | 1,022 |
 | **Total** | **6,190** |
 
 **[Download weld-dataset.zip (Google Drive)](https://drive.google.com/file/d/19eFmz3DzF9db0GrNssFRj7Yi4IXCsgWw/view?usp=drivesdk)**
 
-The reported scene-grouped split contains **4,333 training**, **619 validation**, and **1,238 test** images. Dataset sources, class statistics, and group counts are described in [data/README.md](data/README.md).
+The reported scene-grouped split contains **4,333 training**, **619 validation**, and **1,238 test** images. Dataset sources and annotation statistics are described in [data/README.md](data/README.md).
 
 ## Main results
 
@@ -43,7 +42,7 @@ Accuracy is reported as mean ± standard deviation across **five independent run
 | --- | --- |
 | Dataset download | [weld-dataset.zip](https://drive.google.com/file/d/19eFmz3DzF9db0GrNssFRj7Yi4IXCsgWw/view?usp=drivesdk) |
 | Dataset description and class distribution | [data/README.md](data/README.md) |
-| Split image, instance, and group counts | [data/split_summary.csv](data/split_summary.csv) |
+| Split image and instance counts | [data/split_summary.csv](data/split_summary.csv) |
 | Paper-reported training settings | [configs/training.yaml](configs/training.yaml) |
 | Paper-reported evaluation settings | [protocols/evaluation.yaml](protocols/evaluation.yaml) |
 | Source-wise dataset statistics | [records/source_statistics.csv](records/source_statistics.csv) |
