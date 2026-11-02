@@ -1,62 +1,32 @@
 # WeldCDFNet
 
-**Lightweight Contextual Dynamic Fusion for Robust Weld Defect Detection in Complex Industrial Images**
+**WeldCDFNet: Lightweight Contextual Dynamic Fusion for Robust Weld Defect Detection in Complex Industrial Images**
 
-WeldCDFNet is a lightweight detector based on YOLOv13n for industrial weld-surface inspection. It combines contextual feature extraction, Fourier-domain cross-scale alignment, and content-adaptive localization to detect small, low-contrast, and irregular defects under complex metallic backgrounds.
+WeldCDFNet is a lightweight YOLOv13n-based model for detecting weld defects in industrial images.
 
 ## Method
 
-| Component | Main operation | Location |
-| --- | --- | --- |
-| **PBNet** | Multi-scale contextual modeling and local-texture enhancement | Backbone |
-| **C-FAAF** | Local Fourier orientation estimation, component alignment, and attention-based fusion | Cross-scale feature fusion |
-| **CMDetect** | Regional affinity modeling and spatially varying dynamic kernels | Detection-head localization branch |
+- **PBNet:** Multi-scale contextual and local-texture feature extraction.
+- **C-FAAF:** Fourier-domain orientation estimation and cross-scale feature alignment.
+- **CMDetect:** Content-adaptive dynamic convolution in the localization branch.
 
-## Weld defect dataset
+## Dataset
 
-The benchmark reported in the manuscript contains **6,190 images**, **28,921 annotated defect instances**, and **nine categories** from four acquisition sources.
+The weld defect benchmark contains **6,190 images**, **28,921 annotated instances**, and **nine defect categories**. Its training, validation, and test subsets contain **4,333**, **619**, and **1,238** images, respectively.
 
-| Source | Images |
-| --- | ---: |
-| Steel | 3,168 |
-| Weld-Low | 2,000 |
-| Weld-High | 736 |
-| Robot platform | 286 |
-| **Total** | **6,190** |
+**[Download weld-dataset.zip (Google Drive)](https://drive.google.com/file/d/19eFmz3DzF9db0GrNssFRj7Yi4IXCsgWw/view?usp=drivesdk)**
 
-**[Download the weld dataset archive (Google Drive)](https://drive.google.com/file/d/19eFmz3DzF9db0GrNssFRj7Yi4IXCsgWw/view?usp=drivesdk)**
+See [dataset information](data/README.md) for source and class statistics.
 
-The reported scene-grouped partition contains **4,333 training**, **619 validation**, and **1,238 test** images. Source and grouping statistics, class names, and annotation totals are documented in [data/README.md](data/README.md).
+## Main results
 
-## Main benchmark
+| Model | mAP@50 (%) | mAP@50:95 (%) | Parameters (M) | GFLOPs |
+| --- | ---: | ---: | ---: | ---: |
+| YOLOv13n | 82.2 ± 0.12 | 52.7 ± 0.23 | 2.46 | 6.2 |
+| **WeldCDFNet** | **86.8 ± 0.10** | **55.1 ± 0.11** | **2.44** | **6.1** |
 
-| Detector | Precision (%) | Recall (%) | mAP@50 (%) | mAP@50:95 (%) | Params (M) | GFLOPs | FPS |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| YOLOv13n | 81.7 ± 0.23 | 80.7 ± 0.34 | 82.2 ± 0.12 | 52.7 ± 0.23 | 2.46 | 6.2 | 72 |
-| **WeldCDFNet** | **85.7 ± 0.14** | **82.9 ± 0.12** | **86.8 ± 0.10** | **55.1 ± 0.11** | **2.44** | **6.1** | 67 |
+Results are reported over five independent runs using seeds **40, 41, 42, 43, and 44**.
 
-Detection accuracy is reported as the mean ± standard deviation over five independent runs, using random seeds **40–44**. FPS refers to direct RTX 4090 measurements with an input size of 640 × 640 and a batch size of 1.
+## Code and model weights
 
-## External evaluation
-
-Two evaluation protocols cover five external datasets: **PVIC-WELD, HWZO-WELD, MJHVT-WELD, NEU-DET**, and **GC10-DET**.
-
-| Protocol | WeldCDFNet overall mAP@50 (%) | Best compared baseline (%) |
-| --- | ---: | ---: |
-| Five-run target-domain retraining | **79.7** | 78.1 |
-| Five-checkpoint class-agnostic zero-shot transfer | **45.2** | 41.4 |
-
-The zero-shot metric evaluates defect-region localization across different category systems. Further outcome summaries are in [results/README.md](results/README.md).
-
-## Experimental protocol and resources
-
-- [Dataset sources, annotations, and reported split](data/README.md)
-- [Training and evaluation protocols](protocols/README.md)
-- [Main and external evaluation results](results/README.md)
-
-For access to the code associated with this paper, please feel free to contact the corresponding authors.
-
-## Paper
-
-*WeldCDFNet: Lightweight Contextual Dynamic Fusion for Robust Weld Defect Detection in Complex Industrial Images.*
-
+For the paper's code and trained model weights, please feel free to contact the corresponding authors.
