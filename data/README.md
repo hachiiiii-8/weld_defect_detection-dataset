@@ -1,35 +1,36 @@
 # Weld defect dataset
 
-The benchmark described in the WeldCDFNet manuscript contains **6,190 images**, **28,921 annotated instances**, and **nine defect classes**: air-hole, pore, stain, discontinuity, deposit, overlap, hollow-bead, unfused, and broken-arc.
+The weld benchmark comprises **6,190 images**, **28,921 selected defect annotations**, and **nine defect categories** from Steel and LoHi-WELD.
 
 **Dataset archive:** [weld-dataset.zip (Google Drive)](https://drive.google.com/file/d/19eFmz3DzF9db0GrNssFRj7Yi4IXCsgWw/view?usp=drivesdk).
 
-## Data sources
+## Source collections
 
-| Source | Images | Annotated instances | Independent groups |
-| --- | ---: | ---: | ---: |
-| Steel | 3,168 | 11,694 | 473 |
-| Weld-Low | 2,000 | 8,718 | 226 |
-| Weld-High | 736 | 6,204 | 159 |
-| Robot platform | 286 | 2,305 | 37 |
-| **Total** | **6,190** | **28,921** | **895** |
+| Collection | Images | Selected source-native annotations |
+| --- | ---: | ---: |
+| Steel | 3,168 | 6,509 |
+| LoHi-WELD | 3,022 | 22,412 |
+| **Total** | **6,190** | **28,921** |
 
-The reported split is **4,333/619/1,238 images** for training/validation/testing, respectively, with **20,704/2,304/5,913** annotated instances. The corresponding independent-group counts are **625/91/179**.
+LoHi-WELD contains **2,000 low-resolution** and **1,022 high-resolution** robotic-welding images.
 
-Images from the same weld scene, workpiece, welding run, or acquisition sequence are assigned to the same subset. Matching low- and high-resolution observations are grouped together.
+## Selected native categories
 
-## Class distribution
+| Defect category | Steel | LoHi-WELD |
+| --- | ---: | ---: |
+| air-hole | 5,191 | — |
+| pore | — | 3,950 |
+| stain | — | 8,307 |
+| discontinuity | — | 7,220 |
+| deposit | — | 2,935 |
+| overlap | 223 | — |
+| hollow-bead | 229 | — |
+| unfused | 408 | — |
+| broken-arc | 458 | — |
+| **Total** | **6,509** | **22,412** |
 
-| Class | Instances |
-| --- | ---: |
-| air-hole | 5,191 |
-| pore | 4,155 |
-| stain | 8,307 |
-| discontinuity | 7,220 |
-| deposit | 2,730 |
-| overlap | 223 |
-| hollow-bead | 229 |
-| unfused | 408 |
-| broken-arc | 458 |
-| **Total** | **28,921** |
+The table reports selected annotations in the original datasets' category systems. The standardized benchmark category totals are available in [records/class_counts.csv](../records/class_counts.csv).
 
+## Evaluation split
+
+The reported image split is **4,333 training**, **619 validation**, and **1,238 test** images, containing **20,704**, **2,304**, and **5,913** annotated instances, respectively. Source-linked scene observations, including corresponding LoHi-WELD resolution variants, are kept within the same subset.
