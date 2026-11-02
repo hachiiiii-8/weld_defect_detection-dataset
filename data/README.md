@@ -33,4 +33,3 @@ Images from the same weld scene, workpiece, welding run, or acquisition sequence
 | broken-arc | 458 |
 | **Total** | **28,921** |
 
-The manuscript describes annotations in YOLO detection format. Refer to the linked archive for its actual packaged files.
