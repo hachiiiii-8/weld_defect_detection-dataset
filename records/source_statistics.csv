@@ -1,0 +1,6 @@
+source,images,instances,independent_groups,train_groups,validation_groups,test_groups
+Steel,3168,11694,473,330,48,95
+Weld-Low,2000,8718,226,158,23,45
+Weld-High,736,6204,159,111,16,32
+Robot platform,286,2305,37,26,4,7
+Total,6190,28921,895,625,91,179
