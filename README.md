@@ -49,6 +49,6 @@ Accuracy is reported as mean ± standard deviation across **five independent run
 | Source-wise dataset statistics | [records/source_statistics.csv](records/source_statistics.csv) |
 | Defect-category instance counts | [records/class_counts.csv](records/class_counts.csv) |
 
-## Code and model weights
+## Model weights
 
-For the paper's implementation code and trained model weights, please feel free to contact the corresponding authors.
+For trained WeldCDFNet model weights, please contact the corresponding authors.
