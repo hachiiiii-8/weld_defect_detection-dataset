@@ -1,0 +1,21 @@
+# WeldCDFNet main-benchmark evaluation protocol reported in the manuscript.
+data:
+  images:
+    train: 4333
+    validation: 619
+    test: 1238
+  split_unit: weld_scene_or_acquisition_group
+  input_size: [640, 640]
+  resizing: letterbox
+evaluation:
+  confidence_threshold: 0.25
+  nms_iou_threshold: 0.70
+  metrics: [precision, recall, mAP50, mAP50_95]
+  independent_runs: 5
+  seeds: [40, 41, 42, 43, 44]
+  aggregate: mean_and_standard_deviation
+fps_measurement:
+  primary_device: RTX_4090
+  batch_size: 1
+  warmup_iterations: 50
+  timed_iterations: 500
