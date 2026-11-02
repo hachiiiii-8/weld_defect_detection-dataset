@@ -1,5 +1,5 @@
-split,images,annotated_instances,independent_groups
-train,4333,20704,625
-validation,619,2304,91
-test,1238,5913,179
-total,6190,28921,895
+split,images,annotated_instances
+train,4333,20704
+validation,619,2304
+test,1238,5913
+total,6190,28921
